@@ -1,4 +1,4 @@
-import telebot # библиотека telebot
+import telebot # type: ignore # библиотека telebot
 from config import token # импорт токена
 
 bot = telebot.TeleBot(token) 
@@ -6,6 +6,8 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.reply_to(message, "Привет! Я бот для управления чатом.")
+
+print("ПРИВЕТ")
 
 @bot.message_handler(commands=['ban'])
 def ban_user(message):
